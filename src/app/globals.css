@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #00B4D8;
+  --color-secondary: #FF7B54;
+  --color-accent: #2DC653;
+  --color-soft-sand: #FFF4E6;
+  --color-midnight-blue: #1D3557;
+  
+  --color-background: var(--color-soft-sand);
+  --color-foreground: var(--color-midnight-blue);
+}
+
+:root {
+  --background: #FFF4E6;
+  --foreground: #1D3557;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-white/30 backdrop-blur-md border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)];
+  }
+  .glass-dark {
+    @apply bg-midnight-blue/40 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
